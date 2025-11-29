@@ -1,7 +1,7 @@
 import coinsIcon from 'assets/images/Coins.png';
 import truckIcon from 'assets/images/Truck.png';
 import peopleIcon from 'assets/images/People.png';
-import { Badge } from './common';
+import { Badge, ProjectCard } from './common';
 
 const blogs = [
   {
@@ -10,7 +10,8 @@ const blogs = [
     title: 'Top 10 Web Development Trends in 2024',
     description: 'Explore the latest trends shaping modern web development, from AI integration to progressive web apps.',
     date: 'Nov 15, 2024',
-    gradient: 'bg-gradient-blue-1'
+    gradient: 'bg-gradient-blue-1',
+    readMoreLink: '#'
   },
   {
     icon: truckIcon,
@@ -18,7 +19,8 @@ const blogs = [
     title: 'Building Scalable Microservices Architecture',
     description: 'A comprehensive guide to designing and implementing microservices for enterprise applications.',
     date: 'Nov 8, 2024',
-    gradient: 'bg-gradient-blue-1'
+    gradient: 'bg-gradient-blue-1',
+    readMoreLink: '#'
   },
   {
     icon: peopleIcon,
@@ -26,7 +28,8 @@ const blogs = [
     title: 'AI in Software Development: A Game Changer',
     description: 'How artificial intelligence is revolutionizing the software development lifecycle and boosting productivity.',
     date: 'Nov 1, 2024',
-    gradient: 'bg-gradient-blue-1'
+    gradient: 'bg-gradient-blue-1',
+    readMoreLink: '#'
   }
 ];
 
@@ -53,47 +56,18 @@ const Blog = () => {
         </div>
 
         {/* Blog Cards Grid - 3 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1250px] mx-auto">
           {blogs.map((blog, index) => (
-            <div
+            <ProjectCard
               key={index}
-              className="w-full max-w-[587px] h-[559px] bg-white border-[0.5px] border-border-primary rounded-card overflow-hidden hover:shadow-lg transition mx-auto"
-            >
-              {/* Image Area */}
-              <div className={`w-full h-[256.54px] ${blog.gradient} flex items-center justify-center`}>
-                <img src={blog.icon} alt={blog.title} className={blog.iconSize} />
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                {/* Date */}
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-5 h-5 bg-icon-gray rounded flex items-center justify-center">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.5 1.5H8.5V1H7.5V1.5H4.5V1H3.5V1.5H2.5C1.95 1.5 1.5 1.95 1.5 2.5V9.5C1.5 10.05 1.95 10.5 2.5 10.5H9.5C10.05 10.5 10.5 10.05 10.5 9.5V2.5C10.5 1.95 10.05 1.5 9.5 1.5ZM9.5 9.5H2.5V4.5H9.5V9.5Z" fill="white"/>
-                    </svg>
-                  </div>
-                  <span className="text-[12px] leading-[18px] font-normal text-icon-gray font-poppins">
-                    {blog.date}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-[22px] leading-[33px] font-semibold text-text-primary mb-2 font-poppins">
-                  {blog.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-[16px] leading-[24px] font-normal text-text-gray mb-6 font-poppins">
-                  {blog.description}
-                </p>
-
-                {/* Read More */}
-                <a href="#" className="text-[18px] leading-[27px] font-medium text-text-primary hover:text-primary font-poppins transition">
-                  Read More &gt;
-                </a>
-              </div>
-            </div>
+              icon={blog.icon}
+              iconSize={blog.iconSize}
+              title={blog.title}
+              description={blog.description}
+              date={blog.date}
+              gradient={blog.gradient}
+              readMoreLink={blog.readMoreLink}
+            />
           ))}
         </div>
       </div>
