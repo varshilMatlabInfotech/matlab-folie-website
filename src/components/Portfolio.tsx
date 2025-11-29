@@ -99,9 +99,9 @@ const Portfolio = () => {
                 key={index}
                 className={`${button.width} h-[56px] ${
                   button.active
-                    ? 'bg-gradient-primary text-white'
-                    : 'bg-white text-text-primary hover:bg-gray-50'
-                } rounded-button font-medium text-[20px] leading-[30px] font-poppins transition`}
+                    ? 'bg-gradient-primary text-white border-none'
+                    : 'bg-white text-text-primary border border-primary hover:bg-gray-50'
+                } rounded-[8px] font-medium text-[16px] leading-[24px] font-poppins transition`}
               >
                 {button.label}
               </button>
