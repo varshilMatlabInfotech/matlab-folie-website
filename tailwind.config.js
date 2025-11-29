@@ -32,6 +32,7 @@ export default {
           gray: '#5C5C5C',
           dark: '#535151',
           placeholder: '#919191',
+          stat: '#E8E8E8',
         },
         // Border & Line Colors
         border: {

@@ -1,4 +1,5 @@
 import { Star } from 'lucide-react';
+import { Badge } from './common';
 
 const testimonials = [
   {
@@ -20,19 +21,17 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="relative w-full min-h-[679px] bg-[#EAF6FF] py-12 md:py-20">
+    <section className="relative w-full min-h-[679px] bg-bg-lighter py-12 md:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header Section */}
         <div className="flex flex-col items-center mb-12 md:mb-16">
           {/* Badge */}
-          <div className="w-full max-w-[161px] h-[38px] bg-gradient-to-r from-[#081AE0] via-[#0571D6] to-[#03A8D0] rounded-[12px] flex items-center justify-center mb-8">
-            <span className="text-white font-medium text-[18px] leading-[27px] font-['Poppins'] text-center">
-              Testimonials
-            </span>
+          <div className="mb-8">
+            <Badge>Testimonials</Badge>
           </div>
 
           {/* Heading */}
-          <h2 className="w-full max-w-[645px] text-3xl md:text-4xl lg:text-[60px] leading-tight md:leading-[70px] lg:leading-[90px] font-semibold text-black text-center font-['Poppins'] px-4">
+          <h2 className="w-full max-w-[645px] whitespace-nowrap text-3xl md:text-4xl lg:text-[60px] leading-tight md:leading-[70px] lg:leading-[90px] font-semibold text-text-primary text-center font-poppins px-4">
             What Our Clients Say
           </h2>
         </div>
@@ -42,26 +41,26 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="w-full max-w-[438px] h-[282.14px] bg-white border-[0.5px] border-[#00B5FF] rounded-[15px] p-8 mx-auto"
+              className="w-full max-w-[438px] h-[282.14px] bg-white border-[0.5px] border-border-primary rounded-card p-8 mx-auto"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-6">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} size={26} fill="#FFB800" stroke="#FFB800" />
+                  <Star key={i} size={26} fill="currentColor" stroke="currentColor" className="text-star" />
                 ))}
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-[16px] leading-[24px] font-normal italic text-[#5C5C5C] mb-6 font-['Poppins']">
+              <p className="text-[16px] leading-[24px] font-normal italic text-text-gray mb-6 font-poppins">
                 {testimonial.text}
               </p>
 
               {/* Author Info */}
               <div>
-                <h4 className="text-[18px] leading-[27px] font-semibold text-black font-['Poppins'] mb-1">
+                <h4 className="text-[18px] leading-[27px] font-semibold text-text-primary font-poppins mb-1">
                   {testimonial.name}
                 </h4>
-                <p className="text-[16px] leading-[24px] font-normal text-[#5C5C5C] font-['Poppins']">
+                <p className="text-[16px] leading-[24px] font-normal text-text-gray font-poppins">
                   {testimonial.role}
                 </p>
               </div>

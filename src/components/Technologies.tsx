@@ -1,3 +1,5 @@
+import { Badge } from './common';
+
 const techStacks = [
   {
     category: 'Frontend',
@@ -35,24 +37,22 @@ const techStacks = [
 
 const Technologies = () => {
   return (
-    <section className="relative w-full min-h-[609px] bg-[#F8FDFF] py-12 md:py-20" id="technologies">
+    <section className="relative w-full min-h-[609px] bg-bg-light py-12 md:py-20" id="technologies">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header Section */}
         <div className="flex flex-col items-center mb-12 md:mb-16">
           {/* Badge */}
-          <div className="w-full max-w-[146.21px] h-[38px] bg-gradient-to-r from-[#081AE0] via-[#0571D6] to-[#03A8D0] rounded-[12px] flex items-center justify-center mb-8">
-            <span className="text-white font-medium text-[18px] leading-[27px] font-['Poppins'] text-center">
-              Technologies
-            </span>
+          <div className="mb-8">
+            <Badge>Technologies</Badge>
           </div>
 
           {/* Heading */}
-          <h2 className="w-full max-w-[669px] text-3xl md:text-4xl lg:text-[60px] leading-tight md:leading-[70px] lg:leading-[90px] font-semibold text-black text-center mb-6 font-['Poppins'] px-4">
+          <h2 className="w-full max-w-[669px] text-3xl md:text-4xl lg:text-[60px] leading-tight md:leading-[70px] whitespace-nowrap lg:leading-[90px] font-semibold text-text-primary text-center mb-6 font-poppins px-4">
             Our Technology Stack
           </h2>
 
           {/* Description */}
-          <p className="w-full max-w-[1208px] text-lg md:text-xl lg:text-[28px] leading-relaxed md:leading-[36px] lg:leading-[42px] font-normal text-[#5D5D5D] text-center font-['Poppins'] px-4">
+          <p className="w-full max-w-[1208px] text-lg md:text-xl lg:text-[28px] leading-relaxed md:leading-[36px] lg:leading-[42px] font-normal text-text-secondary text-center font-poppins px-4">
             We leverage cutting-edge technologies to build robust, scalable solutions.
           </p>
         </div>
@@ -62,10 +62,10 @@ const Technologies = () => {
           {techStacks.map((stack, index) => (
             <div
               key={index}
-              className="w-full max-w-[327px] h-[150px] bg-white border-[0.5px] border-[#0584D4] rounded-[15px] p-6 mx-auto"
+              className="w-full max-w-[327px] h-[150px] bg-white border-[0.5px] border-primary rounded-card p-6 mx-auto"
             >
               {/* Category Title */}
-              <h3 className="text-[20px] leading-[30px] font-semibold text-[#0584D4] mb-4 font-['Poppins']">
+              <h3 className="text-[20px] leading-[30px] font-semibold text-primary mb-4 font-poppins">
                 {stack.category}
               </h3>
 
@@ -74,7 +74,7 @@ const Technologies = () => {
                 {stack.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="px-2 py-0.5 bg-[#EAF6FF] rounded-[3px] text-[12px] leading-[18px] font-normal text-[#272727] font-['Poppins'] whitespace-nowrap"
+                    className="px-2 py-0.5 bg-bg-lighter rounded-[3px] text-[12px] leading-[18px] font-normal text-text-primary font-poppins whitespace-nowrap"
                   >
                     {tag}
                   </span>

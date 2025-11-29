@@ -54,7 +54,7 @@ const Hero = () => {
               <div key={index} className="flex flex-col items-center gap-3">
                 <div className="flex gap-1">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} size={20} fill="#FFB800" stroke="#FFB800" />
+                    <Star key={i} size={20} fill="currentColor" stroke="currentColor" className="text-star" />
                   ))}
                 </div>
                 <span className="text-[20px] leading-[30px] font-medium text-text-primary font-poppins whitespace-nowrap">
@@ -65,21 +65,30 @@ const Hero = () => {
           </div>
 
           {/* Line Separator - 1362px width, 0.5px height */}
-          <div className="w-full max-w-[1362px] h-[0.5px] bg-[#505050] mb-[41px]"></div>
+          <div className="w-full max-w-[1362px] h-[0.5px] bg-border-gray mb-[41px]"></div>
 
           {/* Trusted by leading companies - 20px/30px */}
           <p className="text-[20px] leading-[30px] font-normal text-text-primary text-center font-poppins mb-[38px] px-4">
             Trusted by leading companies
           </p>
+        </div>
+      </div>
 
-          {/* Company Logos - 30px/45px, color #717171 */}
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-12 w-full max-w-[1891px] px-4">
-            {companies.map((company, i) => (
-              <span key={i} className="text-xl md:text-2xl lg:text-[30px] leading-[45px] font-semibold text-[#717171] font-poppins whitespace-nowrap">
-                {company}
-              </span>
-            ))}
-          </div>
+      {/* Company Logos - Animated Marquee - Full Width */}
+      <div className="relative w-full overflow-hidden bg-bg-lighter">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {/* First set of companies */}
+          {companies.map((company, i) => (
+            <span key={`first-${i}`} className="inline-block mx-8 text-[30px] leading-[45px] font-semibold text-icon-company font-poppins">
+              {company}
+            </span>
+          ))}
+          {/* Duplicate set for seamless loop */}
+          {companies.map((company, i) => (
+            <span key={`second-${i}`} className="inline-block mx-8 text-[30px] leading-[45px] font-semibold text-icon-company font-poppins">
+              {company}
+            </span>
+          ))}
         </div>
       </div>
     </section>

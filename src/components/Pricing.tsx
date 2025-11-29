@@ -23,24 +23,24 @@ const pricingModels = [
 
 const Pricing = () => {
   return (
-    <section className="relative w-full min-h-[782px] bg-[#EAF6FF] py-12 md:py-20">
+    <section className="relative w-full min-h-[782px] bg-bg-lighter py-12 md:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header Section */}
         <div className="flex flex-col items-center mb-12 md:mb-16">
           {/* Badge */}
-          <div className="w-full max-w-[96.7px] h-[38px] bg-gradient-to-r from-[#081AE0] via-[#0571D6] to-[#03A8D0] rounded-[12px] flex items-center justify-center mb-8">
-            <span className="text-white font-medium text-[18px] leading-[27px] font-['Poppins'] text-center">
+          <div className="w-full max-w-[96.7px] h-[38px] bg-gradient-primary rounded-badge flex items-center justify-center mb-8">
+            <span className="text-white font-medium text-[18px] leading-[27px] font-poppins text-center">
               Pricing
             </span>
           </div>
 
           {/* Heading */}
-          <h2 className="w-full max-w-[871px] text-3xl md:text-4xl lg:text-[60px] leading-tight md:leading-[70px] lg:leading-[90px] font-semibold text-black text-center mb-6 font-['Poppins'] px-4">
+          <h2 className="w-full max-w-[871px] text-3xl whitespace-nowrap md:text-4xl lg:text-[60px] leading-tight md:leading-[70px] lg:leading-[90px] font-semibold text-text-primary text-center mb-6 font-poppins px-4">
             Flexible Engagement Models
           </h2>
 
           {/* Description */}
-          <p className="w-full max-w-[1124px] text-lg md:text-xl lg:text-[28px] leading-relaxed md:leading-[36px] lg:leading-[42px] font-normal text-[#5D5D5D] text-center font-['Poppins'] px-4">
+          <p className="w-full max-w-[1124px] text-lg md:text-xl lg:text-[28px] leading-relaxed md:leading-[36px] lg:leading-[42px] font-normal text-text-secondary text-center font-poppins px-4">
             Choose the pricing model that best fits your project requirements and budget.
           </p>
         </div>
@@ -50,24 +50,24 @@ const Pricing = () => {
           {pricingModels.map((model, index) => (
             <div
               key={index}
-              className="w-full max-w-[438px] h-[328px] bg-white border-[0.5px] border-[#00B5FF] rounded-[15px] p-8 mx-auto flex flex-col"
+              className="w-full max-w-[438px] h-[328px] bg-white border-[0.5px] border-border-primary rounded-card p-8 mx-auto flex flex-col"
             >
               {/* Title */}
-              <h3 className="text-[20px] leading-[30px] font-semibold text-black mb-4 font-['Poppins']">
+              <h3 className="text-[20px] leading-[30px] font-semibold text-text-primary mb-4 font-poppins">
                 {model.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[16px] leading-[24px] font-normal text-[#5C5C5C] mb-auto font-['Poppins']">
+              <p className="text-[16px] leading-[24px] font-normal text-text-gray mb-auto font-poppins">
                 {model.description}
               </p>
 
               {/* Best For Section */}
               <div className="mt-auto pt-8">
-                <h4 className="text-[20px] leading-[30px] font-semibold text-black mb-2 font-['Poppins']">
+                <h4 className="text-[20px] leading-[30px] font-semibold text-text-primary mb-2 font-poppins">
                   Best for:
                 </h4>
-                <p className="text-[16px] leading-[24px] font-normal text-[#5C5C5C] font-['Poppins']">
+                <p className="text-[16px] leading-[24px] font-normal text-text-gray font-poppins">
                   {model.bestFor}
                 </p>
               </div>

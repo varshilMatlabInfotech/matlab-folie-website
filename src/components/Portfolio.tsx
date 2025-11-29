@@ -4,6 +4,7 @@ import mobileIcon from 'assets/images/Mobile.png';
 import coinsIcon from 'assets/images/Coins.png';
 import truckIcon from 'assets/images/Truck.png';
 import peopleIcon from 'assets/images/People.png';
+import { Badge } from './common';
 
 const projects = [
   {
@@ -13,7 +14,7 @@ const projects = [
     description: 'Responsive, scalable web applications using modern frameworks like React, Next.js, and Vue.',
     category: 'E-commerce',
     categoryWidth: 'w-[100.5px]',
-    gradient: 'from-[#0822DF] to-[#048AD3]'
+    gradient: 'bg-gradient-blue-1'
   },
   {
     icon: heartIcon,
@@ -22,7 +23,7 @@ const projects = [
     description: 'HIPAA-compliant telemedicine platform connecting patients with doctors nationwide.',
     category: 'Web',
     categoryWidth: 'w-[38px]',
-    gradient: 'from-[#0822DF] to-[#048AD3]'
+    gradient: 'bg-gradient-blue-1'
   },
   {
     icon: mobileIcon,
@@ -31,7 +32,7 @@ const projects = [
     description: 'Secure banking application with biometric authentication and instant transfers.',
     category: 'Mobile',
     categoryWidth: 'w-[48px]',
-    gradient: 'from-[#0822DF] to-[#048AD3]'
+    gradient: 'bg-gradient-blue-1'
   },
   {
     icon: coinsIcon,
@@ -40,7 +41,7 @@ const projects = [
     description: 'Real-time business intelligence platform processing millions of data points.',
     category: 'SaaS',
     categoryWidth: 'w-[46px]',
-    gradient: 'from-[#0822DF] to-[#048AD3]'
+    gradient: 'bg-gradient-blue-1'
   },
   {
     icon: truckIcon,
@@ -49,7 +50,7 @@ const projects = [
     description: 'On-demand food delivery platform serving 100+ restaurants and 10K+ customers.',
     category: 'Mobile',
     categoryWidth: 'w-[50px]',
-    gradient: 'from-[#0822DF] to-[#048AD3]'
+    gradient: 'bg-gradient-blue-1'
   },
   {
     icon: peopleIcon,
@@ -58,7 +59,7 @@ const projects = [
     description: 'Custom customer relationship management system with AI-powered insights.',
     category: 'SaaS',
     categoryWidth: 'w-[35.86px]',
-    gradient: 'from-[#0822DF] to-[#048AD3]'
+    gradient: 'bg-gradient-blue-1'
   }
 ];
 
@@ -72,24 +73,22 @@ const filterButtons = [
 
 const Portfolio = () => {
   return (
-    <section className="relative w-full min-h-[1334px] bg-[#F8FDFF] py-12 md:py-20">
+    <section className="relative w-full min-h-[1334px] bg-bg-light py-12 md:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header Section */}
         <div className="flex flex-col items-center mb-12 md:mb-16">
           {/* Badge */}
-          <div className="w-full max-w-[101px] h-[38px] bg-gradient-to-r from-[#081AE0] via-[#0571D6] to-[#03A8D0] rounded-[12px] flex items-center justify-center mb-8">
-            <span className="text-white font-medium text-[18px] leading-[27px] font-['Poppins'] text-center">
-              Our Work
-            </span>
+          <div className="mb-8">
+            <Badge>Our Work</Badge>
           </div>
 
           {/* Heading */}
-          <h2 className="w-full max-w-[579px] text-3xl md:text-4xl lg:text-[60px] leading-tight md:leading-[70px] lg:leading-[90px] font-semibold text-black text-center mb-6 font-['Poppins'] px-4">
+          <h2 className="w-full max-w-[579px] whitespace-nowrap text-3xl md:text-4xl lg:text-[60px] leading-tight md:leading-[70px] lg:leading-[90px] font-semibold text-text-primary text-center mb-6 font-poppins px-4">
             Portfolio Showcase
           </h2>
 
           {/* Description */}
-          <p className="w-full max-w-[1056px] text-lg md:text-xl lg:text-[28px] leading-relaxed md:leading-[36px] lg:leading-[42px] font-normal text-[#5D5D5D] text-center font-['Poppins'] px-4 mb-8">
+          <p className="w-full max-w-[1056px] text-lg md:text-xl lg:text-[28px] leading-relaxed md:leading-[36px] lg:leading-[42px] font-normal text-text-secondary text-center font-poppins px-4 mb-8">
             Explore our successful projects across various industries and technologies.
           </p>
 
@@ -100,9 +99,9 @@ const Portfolio = () => {
                 key={index}
                 className={`${button.width} h-[56px] ${
                   button.active
-                    ? 'bg-gradient-to-r from-[#081AE0] via-[#0571D6] to-[#03A8D0] text-white'
-                    : 'bg-white text-black hover:bg-gray-50'
-                } rounded-[10px] font-medium text-[20px] leading-[30px] font-['Poppins'] transition`}
+                    ? 'bg-gradient-primary text-white'
+                    : 'bg-white text-text-primary hover:bg-gray-50'
+                } rounded-button font-medium text-[20px] leading-[30px] font-poppins transition`}
               >
                 {button.label}
               </button>
@@ -115,27 +114,27 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="w-full max-w-[586.89px] h-[460px] bg-white border-[0.5px] border-[#00B5FF] rounded-[15px] overflow-hidden hover:shadow-lg transition mx-auto"
+              className="w-full max-w-[586.89px] h-[460px] bg-white border-[0.5px] border-border-primary rounded-card overflow-hidden hover:shadow-lg transition mx-auto"
             >
               {/* Image Area */}
-              <div className={`w-full h-[256.54px] bg-gradient-to-r ${project.gradient} flex items-center justify-center`}>
+              <div className={`w-full h-[256.54px] ${project.gradient} flex items-center justify-center`}>
                 <img src={project.icon} alt={project.title} className={project.iconSize} />
               </div>
 
               {/* Content */}
               <div className="p-6">
                 {/* Category Badge */}
-                <span className={`inline-block ${project.categoryWidth} h-[21px] px-2 py-1 bg-[#F3F1F1] rounded-[3px] text-[10px] leading-[15px] font-normal text-black mb-4 font-['Poppins'] text-center`}>
+                <span className={`inline-block ${project.categoryWidth} h-[21px] px-2 py-1 bg-footer-bg rounded-[3px] text-[10px] leading-[15px] font-normal text-text-primary mb-4 font-poppins text-center`}>
                   {project.category}
                 </span>
 
                 {/* Title */}
-                <h3 className="text-[22px] leading-[33px] font-semibold text-black mb-2 font-['Poppins']">
+                <h3 className="text-[22px] leading-[33px] font-semibold text-text-primary mb-2 font-poppins">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[14px] leading-[21px] font-normal text-[#5C5C5C] font-['Poppins']">
+                <p className="text-[14px] leading-[21px] font-normal text-text-gray font-poppins">
                   {project.description}
                 </p>
               </div>

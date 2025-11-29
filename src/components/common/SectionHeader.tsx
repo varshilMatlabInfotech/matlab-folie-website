@@ -21,8 +21,8 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         <Badge>{badge}</Badge>
       </div>
 
-      {/* Heading */}
-      <h2 className="w-full max-w-[1496px] text-3xl md:text-4xl lg:text-[60px] leading-tight md:leading-[70px] lg:leading-[90px] font-semibold text-text-primary text-center mb-6 font-poppins px-4">
+      {/* Heading - Keep on one line */}
+      <h2 className="w-full max-w-[1496px] text-3xl md:text-4xl lg:text-[60px] leading-tight md:leading-[70px] lg:leading-[90px] font-semibold text-text-primary text-center mb-6 font-poppins px-4 whitespace-nowrap">
         {title}
       </h2>
 

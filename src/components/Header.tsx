@@ -16,30 +16,45 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 bg-bg-light z-50 border-b border-gray-100">
+      {/* Header - Fixed, 71px height from Figma */}
+      <header className="fixed top-0 left-0 right-0 bg-bg-light z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="flex items-center justify-between h-20 lg:h-24">
+          <div className="flex items-center justify-between h-[99px]">
+            {/* Logo - 203px x 71px from Figma */}
             <div className="flex items-center">
-              <img src={matlabLogo} alt="MatLab Infotech" className="h-10 lg:h-12" />
+              <img src={matlabLogo} alt="MatLab Infotech" className="h-[71px] w-auto" />
             </div>
 
+            {/* Navigation - 22px font, 33px line-height, weight 500 */}
             <nav className="hidden lg:flex items-center space-x-10">
-              <a href="#home" className="text-text-primary font-medium text-[22px] leading-[33px] font-poppins">Home</a>
-              <a href="#services" className="text-text-light font-medium text-[22px] leading-[33px] font-poppins hover:text-text-primary transition">Services</a>
-              <a href="#technologies" className="text-text-light font-medium text-[22px] leading-[33px] font-poppins hover:text-text-primary transition">Technologies</a>
-              <a href="#industries" className="text-text-light font-medium text-[22px] leading-[33px] font-poppins hover:text-text-primary transition">Industries</a>
-              <a href="#company" className="text-text-light font-medium text-[22px] leading-[33px] font-poppins hover:text-text-primary transition">Company</a>
+              <a href="#home" className="text-text-primary font-medium text-[22px] leading-[33px] font-poppins">
+                Home
+              </a>
+              <a href="#services" className="text-text-light font-medium text-[22px] leading-[33px] font-poppins hover:text-text-primary transition">
+                Services
+              </a>
+              <a href="#technologies" className="text-text-light font-medium text-[22px] leading-[33px] font-poppins hover:text-text-primary transition">
+                Technologies
+              </a>
+              <a href="#industries" className="text-text-light font-medium text-[22px] leading-[33px] font-poppins hover:text-text-primary transition">
+                Industries
+              </a>
+              <a href="#company" className="text-text-light font-medium text-[22px] leading-[33px] font-poppins hover:text-text-primary transition">
+                Company
+              </a>
             </nav>
 
-            <div className="hidden lg:flex items-center space-x-4">
-              <Button variant="secondary">
-                Get Quote
+            {/* Buttons - 160px width, 56px height, 20px/30px font from Figma */}
+            <div className="hidden lg:flex items-center space-x-6">
+              <Button variant="secondary" className="w-[180px] h-[56px]">
+                Contact Us
               </Button>
-              <Button variant="primary">
+              <Button variant="primary" className="w-[160px] h-[56px]">
                 Hire Us
               </Button>
             </div>
 
+            {/* Mobile Menu Button */}
             <button 
               onClick={toggleDrawer}
               className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition"
@@ -68,7 +83,7 @@ const Header = () => {
         <div className="flex flex-col h-full">
           {/* Drawer Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
-            <img src={matlabLogo} alt="MatLab Infotech" className="h-10" />
+            <img src={matlabLogo} alt="MatLab Infotech" className="h-[50px]" />
             <button 
               onClick={closeDrawer}
               className="p-2 hover:bg-gray-100 rounded-lg transition"
@@ -120,11 +135,11 @@ const Header = () => {
           {/* Action Buttons */}
           <div className="p-6 space-y-3 border-t border-gray-100">
             <Button 
-              variant="outline"
+              variant="secondary"
               fullWidth
               onClick={closeDrawer}
             >
-              Get Quote
+              Contact Us
             </Button>
             <Button 
               variant="primary"
